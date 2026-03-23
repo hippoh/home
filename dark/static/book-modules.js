@@ -1,0 +1,45 @@
+window.HDM_BOOK_MODULES = {
+  nl: {
+    id: "nl",
+    title: "Northern Light",
+    color: "#b48738",
+    world_ids: ["lyra_world"],
+    connection_ids: [],
+  },
+  tsk: {
+    id: "tsk",
+    title: "The Subtle Knife",
+    color: "#6f8aa5",
+    world_ids: ["lyra_world", "our_world", "cittagazze"],
+    connection_ids: [
+      "lyra_world->our_world",
+      "our_world->cittagazze",
+      "lyra_world->cittagazze",
+    ],
+  },
+  tas: {
+    id: "tas",
+    title: "The Amber Spyglass",
+    color: "#7f9b90",
+    world_ids: [
+      "lyra_world",
+      "our_world",
+      "cittagazze",
+      "mulefa_world",
+      "land_of_dead",
+      "clouded_mountain",
+      "gallivespian_world",
+      "ogunwe_world",
+    ],
+    connection_ids: [
+      "lyra_world->our_world",
+      "lyra_world->clouded_mountain",
+      "our_world->cittagazze",
+      "lyra_world->cittagazze",
+      "cittagazze->mulefa_world",
+      "cittagazze->land_of_dead",
+      "clouded_mountain->gallivespian_world",
+      "clouded_mountain->ogunwe_world",
+    ],
+  },
+};

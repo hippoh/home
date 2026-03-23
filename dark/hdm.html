@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Alethiometer Atlas · 人物</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body data-page="people">
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__badge">Jordan College Archive · Dust Registry</div>
+        <nav class="site-tabs" aria-label="站点栏目">
+          <a class="site-tab is-current" href="./hdm.html">人物</a>
+          <a class="site-tab" href="./places.html">地点</a>
+          <a class="site-tab" href="./concepts.html">概念</a>
+          <a class="site-tab" href="./tools.html">工具</a>
+          <a class="site-tab" href="./worlds.html">世界</a>
+          <a class="site-tab" href="./themes.html">主题</a>
+        </nav>
+        <div class="hero__copy">
+          <div class="hero__intro">
+            <p class="eyebrow">His Dark Materials</p>
+            <h1>The Alethiometer Atlas</h1>
+            <p class="hero__subtitle">《His Dark Materials》三部曲人物、守护精灵与多世界关系站</p>
+            <p class="hero__description">当前页聚焦人物与关系网络，适合顺着卷册模块梳理角色、daemon、阵营和跨世界连线。</p>
+          </div>
+          <div class="module-bar">
+            <div class="module-bar__copy">
+              <span class="panel__eyebrow">Book Modules</span>
+              <p>勾选想查看的卷册，人物、世界、地点、概念、工具、主题和关系都会随之切换。</p>
+            </div>
+            <div class="module-pills" id="module-picker"></div>
+          </div>
+        </div>
+        <div class="hero__stats" id="hero-stats"></div>
+      </header>
+
+      <main class="layout">
+        <aside class="panel detail-panel" id="detail-panel">
+          <div class="panel__header">
+            <p class="panel__eyebrow">Selected Record</p>
+            <h2>档案详情</h2>
+          </div>
+          <div id="detail-content"></div>
+        </aside>
+
+        <section class="content-stack">
+          <section class="panel panel--wide reading-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">Archive Desk</p>
+                <h2>卷册档案台</h2>
+              </div>
+            </div>
+            <div class="reading-layout reading-layout--compact">
+              <div class="inset-panel">
+                <p class="panel__eyebrow">Module Overview</p>
+                <h3>卷册与档案说明</h3>
+                <div class="reading-summary" id="reading-summary"></div>
+              </div>
+              <div class="inset-panel">
+                <p class="panel__eyebrow">Alias Desk</p>
+                <h3>别名与首次出场索引</h3>
+                <div class="mini-card-grid" id="alias-index"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel panel--wide graph-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">Interactive Graph</p>
+                <h2>人物关系星图</h2>
+              </div>
+              <div class="legend" id="relation-legend"></div>
+            </div>
+            <div class="graph-toolbar" id="relation-filters"></div>
+            <canvas id="network-canvas" width="1400" height="920" aria-label="角色关系图"></canvas>
+            <p class="panel-note">星图恢复为动态受力布局：节点会缓慢调整位置，但始终被约束在画布内部；点击节点可聚焦，再次点击同一节点即可恢复全图。</p>
+          </section>
+
+          <section class="panel panel--wide catalog-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">Filter & Search</p>
+                <h2>人物档案库</h2>
+              </div>
+              <button class="ghost-button" id="random-character">随机点亮一位角色</button>
+            </div>
+            <div class="controls">
+              <label class="control">
+                <span>检索名字</span>
+                <input id="search-input" type="search" placeholder="输入 Lyra、Will、Iorek..." />
+              </label>
+              <label class="control">
+                <span>角色类型</span>
+                <select id="entity-filter"></select>
+              </label>
+              <label class="control">
+                <span>性别</span>
+                <select id="gender-filter"></select>
+              </label>
+              <label class="control">
+                <span>年龄阶段</span>
+                <select id="age-filter"></select>
+              </label>
+              <label class="control">
+                <span>阵营</span>
+                <select id="faction-filter"></select>
+              </label>
+              <label class="control">
+                <span>原生世界</span>
+                <select id="world-filter"></select>
+              </label>
+              <button class="ghost-button" id="reset-filters">重置筛选</button>
+            </div>
+            <div class="catalog-meta">
+              <p id="catalog-count"></p>
+              <div class="legend" id="book-legend"></div>
+            </div>
+            <div class="card-grid" id="character-grid"></div>
+          </section>
+
+          <section class="panel panel--wide sources-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">Working Notes</p>
+                <h2>说明与来源</h2>
+              </div>
+            </div>
+            <p>人物与世界信息基于 Philip Pullman 三部曲正典、His Dark Materials Wiki、Wikipedia 与 SparkNotes 等公开资料整理；少数守护精灵名称以“书中未明确”标示。</p>
+            <p>本站为结构化人物关系站，优先覆盖三部曲中的核心角色与高频具名角色，并保留了继续补充角色与工具线索的接口。</p>
+            <div class="legend source-links">
+              <a href="https://hisdarkmaterials.fandom.com/wiki/Category:Characters" target="_blank" rel="noreferrer">His Dark Materials Wiki</a>
+              <a href="https://en.wikipedia.org/wiki/His_Dark_Materials" target="_blank" rel="noreferrer">Wikipedia</a>
+              <a href="https://www.sparknotes.com/lit/hisdarkmaterials/" target="_blank" rel="noreferrer">SparkNotes</a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./static/hdm-data.js"></script>
+    <script src="./static/book-modules.js"></script>
+    <script src="./static/reading-guide.js"></script>
+    <script src="./static/app.js" defer></script>
+  </body>
+</html>

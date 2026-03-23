@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Alethiometer Atlas · 世界</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body data-page="worlds">
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__badge">Jordan College Archive · Dust Registry</div>
+        <nav class="site-tabs" aria-label="站点栏目">
+          <a class="site-tab" href="./hdm.html">人物</a>
+          <a class="site-tab" href="./places.html">地点</a>
+          <a class="site-tab" href="./concepts.html">概念</a>
+          <a class="site-tab" href="./tools.html">工具</a>
+          <a class="site-tab is-current" href="./worlds.html">世界</a>
+          <a class="site-tab" href="./themes.html">主题</a>
+        </nav>
+        <div class="hero__copy">
+          <div class="hero__intro">
+            <p class="eyebrow">His Dark Materials</p>
+            <h1>The Alethiometer Atlas</h1>
+            <p class="hero__subtitle">多世界索引与航路</p>
+            <p class="hero__description">当前页聚焦世界之间的连接、角色穿越路线和各世界的原生角色与进入者分布。</p>
+          </div>
+          <div class="module-bar">
+            <div class="module-bar__copy">
+              <span class="panel__eyebrow">Book Modules</span>
+              <p>勾选卷册后，世界节点、连接航路以及跨界路线都会一起切换。</p>
+            </div>
+            <div class="module-pills" id="module-picker"></div>
+          </div>
+        </div>
+        <div class="hero__stats" id="hero-stats"></div>
+      </header>
+
+      <main class="layout">
+        <aside class="panel detail-panel" id="detail-panel">
+          <div class="panel__header">
+            <p class="panel__eyebrow">Selected Record</p>
+            <h2>档案详情</h2>
+          </div>
+          <div id="detail-content"></div>
+        </aside>
+
+        <section class="content-stack">
+          <section class="panel panel--wide reading-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">Archive Desk</p>
+                <h2>卷册档案台</h2>
+              </div>
+            </div>
+            <div class="reading-layout reading-layout--compact">
+              <div class="inset-panel">
+                <p class="panel__eyebrow">Module Overview</p>
+                <h3>卷册与档案说明</h3>
+                <div class="reading-summary" id="reading-summary"></div>
+              </div>
+              <div class="inset-panel">
+                <p class="panel__eyebrow">Alias Desk</p>
+                <h3>别名与首次出场索引</h3>
+                <div class="mini-card-grid" id="alias-index"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel panel--wide world-routes-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">World Routes</p>
+                <h2>多世界航路图</h2>
+              </div>
+              <button class="ghost-button" id="clear-world-focus">取消世界聚焦</button>
+            </div>
+            <div class="world-layout">
+              <svg id="world-map" viewBox="0 0 1100 720" role="img" aria-label="不同世界之间的航路关系"></svg>
+              <div class="world-panel" id="world-panel"></div>
+            </div>
+          </section>
+
+          <section class="panel panel--wide sources-panel">
+            <div class="section-head">
+              <div>
+                <p class="panel__eyebrow">Working Notes</p>
+                <h2>说明与来源</h2>
+              </div>
+            </div>
+            <p>世界页优先帮助你理解“谁来自哪里、谁进入过哪里、这些穿越在何时发生”，因此重点保留世界节点、说明和路线时间线。</p>
+            <div class="legend source-links">
+              <a href="https://en.wikipedia.org/wiki/His_Dark_Materials" target="_blank" rel="noreferrer">Wikipedia</a>
+              <a href="https://www.sparknotes.com/lit/hisdarkmaterials/" target="_blank" rel="noreferrer">SparkNotes</a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./static/hdm-data.js"></script>
+    <script src="./static/book-modules.js"></script>
+    <script src="./static/reading-guide.js"></script>
+    <script src="./static/app.js" defer></script>
+  </body>
+</html>
