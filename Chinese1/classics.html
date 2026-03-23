@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>古籍全文阅读站</title>
+    <meta
+      name="description"
+      content="集中阅读《声律启蒙》《幼学琼林》《世说新语》《唐诗三百首》《古文观止》的静态站点。"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <aside class="sidebar">
+        <div class="brand-panel">
+          <p class="eyebrow">古籍全文阅读站</p>
+          <h1 id="bookTitle"></h1>
+          <p class="book-meta" id="bookMeta"></p>
+          <p class="brand-copy" id="siteDescription"></p>
+
+          <div class="book-switcher-wrap">
+            <div class="book-switcher-header">
+              <h2>书目</h2>
+              <p>切换五部古籍</p>
+            </div>
+            <div class="book-switcher" id="bookList"></div>
+          </div>
+
+          <dl class="stats">
+            <div>
+              <dt id="sectionStatLabel"></dt>
+              <dd id="sectionCount"></dd>
+            </div>
+            <div>
+              <dt id="entryStatLabel"></dt>
+              <dd id="entryCount"></dd>
+            </div>
+            <div>
+              <dt>译文</dt>
+              <dd id="translationState"></dd>
+            </div>
+          </dl>
+        </div>
+
+        <nav class="toc-panel">
+          <div class="toc-header">
+            <h2 id="tocHeading">目录</h2>
+            <p id="tocMeta"></p>
+          </div>
+          <div class="toc-list" id="tocList"></div>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="toolbar">
+          <div class="toolbar-copy">
+            <p class="eyebrow">当前阅读</p>
+            <h2 id="sectionHeading"></h2>
+            <p id="sectionMeta"></p>
+          </div>
+
+          <div class="toolbar-actions">
+            <label class="toggle" id="translationToggleWrap">
+              <input type="checkbox" id="translationToggle" />
+              <span id="translationToggleLabel">显示译文</span>
+            </label>
+            <button class="ghost-button" id="prevSection" type="button">上一节</button>
+            <button class="ghost-button" id="nextSection" type="button">下一节</button>
+            <a class="ghost-button" id="printPageLink" href="./print.html">打印排版页</a>
+            <a class="ghost-button" id="fullOriginalPdfLink" href="./output/pdf/shishuoxinyu-print-original-only.pdf">原文 PDF</a>
+            <a class="accent-button" id="fullTranslationPdfLink" href="./output/pdf/shishuoxinyu-print-with-translation.pdf">对照 PDF</a>
+          </div>
+        </header>
+
+        <section class="section-card">
+          <div class="section-intro">
+            <p class="eyebrow">章节信息</p>
+            <h3 id="sectionTitle"></h3>
+            <p id="sectionSource"></p>
+          </div>
+          <div class="notice" id="sourceNotice"></div>
+
+          <div class="preface-card" id="prefaceCard" hidden>
+            <p class="preface-label">原序</p>
+            <h4 id="prefaceTitle"></h4>
+            <div class="preface-content" id="prefaceContent"></div>
+          </div>
+
+          <div class="section-actions">
+            <span class="section-actions-label">本节导出</span>
+            <a class="ghost-button" id="sectionPrintLink" href="./print.html">本节打印页</a>
+            <a class="ghost-button" id="sectionOriginalPdfLink" href="./output/pdf/sections/shishuoxinyu/chapter-01-original-only.pdf">本节原文 PDF</a>
+            <a class="accent-button" id="sectionTranslationPdfLink" href="./output/pdf/sections/shishuoxinyu/chapter-01-with-translation.pdf">本节对照 PDF</a>
+          </div>
+        </section>
+
+        <section class="entries" id="entries"></section>
+      </main>
+    </div>
+
+    <template id="entryTemplate">
+      <article class="entry-card">
+        <header class="entry-head">
+          <div class="entry-head-main">
+            <span class="entry-index"></span>
+            <h4 class="entry-title"></h4>
+          </div>
+          <p class="entry-meta"></p>
+        </header>
+        <div class="entry-original-group"></div>
+        <div class="entry-translation-wrap">
+          <div class="entry-translation-group"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="./assets/data.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

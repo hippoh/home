@@ -1,0 +1,240 @@
+:root {
+  --paper: #eef8f7;
+  --ink: #183136;
+  --muted: #5f7a7f;
+  --accent: #5f97a2;
+  --accent-strong: #437984;
+  --accent-soft: rgba(95, 151, 162, 0.14);
+  --glow-a: rgba(137, 198, 201, 0.18);
+  --glow-b: rgba(109, 164, 171, 0.12);
+  --line: rgba(78, 125, 130, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Songti SC", "STSong", serif;
+  background:
+    radial-gradient(circle at top left, var(--glow-a), transparent 20%),
+    linear-gradient(180deg, #f8fcfc 0%, #e8f3f3 100%);
+  line-break: strict;
+  word-break: normal;
+  hanging-punctuation: allow-end last;
+}
+
+.print-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 253, 253, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.print-toolbar h1,
+.print-section-head h2,
+.print-entry-title,
+.print-preface-title {
+  margin: 0;
+}
+
+.eyebrow,
+.print-order {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.toggle,
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(252, 255, 255, 0.94);
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.toggle input {
+  accent-color: var(--accent);
+}
+
+.toggle.is-disabled {
+  opacity: 0.58;
+}
+
+.print-document {
+  width: min(980px, calc(100% - 32px));
+  margin: 20px auto 48px;
+  display: grid;
+  gap: 28px;
+}
+
+.print-section {
+  padding: 30px 34px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(254, 255, 255, 0.96), rgba(238, 247, 246, 0.92)),
+    var(--paper);
+  box-shadow: 0 18px 42px rgba(40, 84, 90, 0.1);
+}
+
+.print-source,
+#printMeta,
+.print-entry-meta {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.print-preface {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: var(--accent-soft);
+}
+
+.print-preface-content {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.print-preface-content p {
+  margin: 0;
+  line-height: 1.9;
+  text-indent: 2em;
+}
+
+.print-entries {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.print-entry {
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+.print-entry-head {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.print-entry-code {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+
+.print-original,
+.print-translation {
+  margin: 0;
+  line-height: 1.9;
+}
+
+.print-original + .print-original,
+.print-translation + .print-translation {
+  margin-top: 10px;
+}
+
+.print-original.is-prose,
+.print-translation.is-prose {
+  text-indent: 2em;
+}
+
+.print-original.is-poem,
+.print-translation.is-poem {
+  white-space: pre-line;
+}
+
+.print-translation-group {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+
+.print-translation {
+  color: var(--muted);
+}
+
+body[data-book="tangshisanbaishou"] .print-entry-head {
+  justify-items: center;
+  text-align: center;
+}
+
+body[data-book="tangshisanbaishou"] .print-original.is-poem,
+body[data-book="tangshisanbaishou"] .print-translation.is-poem {
+  display: table;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+body[data-book="tangshisanbaishou"] .print-entries {
+  column-count: 2;
+  column-gap: 24mm;
+}
+
+body[data-book="tangshisanbaishou"] .print-entry,
+body[data-book="tangshisanbaishou"] .print-preface {
+  break-inside: avoid;
+}
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 16mm;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .print-toolbar {
+    display: none;
+  }
+
+  .print-document {
+    width: auto;
+    margin: 0;
+    gap: 0;
+  }
+
+  .print-section {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    break-before: page;
+  }
+
+  .print-section:first-child {
+    break-before: auto;
+  }
+}

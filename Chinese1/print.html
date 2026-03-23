@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>古籍打印版</title>
+    <meta
+      name="description"
+      content="多部古籍的打印排版页，可按书与章节切换，并控制是否显示译文。"
+    />
+    <link rel="stylesheet" href="./assets/print.css" />
+  </head>
+  <body>
+    <header class="print-toolbar">
+      <div>
+        <p class="eyebrow">打印排版页</p>
+        <h1 id="printBookTitle"></h1>
+        <p id="printMeta"></p>
+      </div>
+      <div class="toolbar-actions">
+        <label class="toggle" id="printTranslationToggleWrap">
+          <input type="checkbox" id="printTranslationToggle" />
+          <span id="printTranslationLabel">显示译文</span>
+        </label>
+        <button class="ghost-button" id="printButton" type="button">打印</button>
+        <a class="ghost-button" id="returnLink" href="./classics.html">返回阅读页</a>
+      </div>
+    </header>
+
+    <main class="print-document" id="printDocument"></main>
+
+    <template id="printSectionTemplate">
+      <section class="print-section">
+        <header class="print-section-head">
+          <p class="print-order"></p>
+          <h2 class="print-title"></h2>
+          <p class="print-source"></p>
+        </header>
+        <div class="print-preface" hidden>
+          <h3 class="print-preface-title"></h3>
+          <div class="print-preface-content"></div>
+        </div>
+        <div class="print-entries"></div>
+      </section>
+    </template>
+
+    <template id="printEntryTemplate">
+      <article class="print-entry">
+        <header class="print-entry-head">
+          <p class="print-entry-code"></p>
+          <h3 class="print-entry-title"></h3>
+          <p class="print-entry-meta"></p>
+        </header>
+        <div class="print-original-group"></div>
+        <div class="print-translation-group"></div>
+      </article>
+    </template>
+
+    <script src="./assets/data.js"></script>
+    <script src="./assets/print.js"></script>
+  </body>
+</html>
