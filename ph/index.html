@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>西方哲学思想星图</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="atlas">
+      <section class="stage">
+        <svg id="graph-svg" class="graph-svg" aria-label="西方哲学人物关系大图"></svg>
+
+        <aside id="ui-rail" class="ui-rail">
+          <div class="search-block">
+            <div class="search-row">
+              <input
+                id="search-input"
+                class="search-input"
+                type="search"
+                autocomplete="off"
+                placeholder="搜索人物：康德、尼采、海德格尔"
+              />
+              <button id="reset-view" class="ghost-btn">回到全图</button>
+            </div>
+          </div>
+
+          <aside id="detail-panel" class="detail-panel" hidden></aside>
+
+          <section id="legend-card" class="legend-card"></section>
+        </aside>
+
+        <div id="hover-card" class="hover-card" hidden></div>
+      </section>
+    </main>
+
+    <script src="./data/philosophy-data.js"></script>
+    <script src="./data/philosophy-core-ideas.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
