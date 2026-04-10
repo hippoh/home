@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中国历史年表和帝王世系</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">中国历史年表</p>
+          <h1>中国历史年表和帝王世系</h1>
+        </div>
+        <div class="hero-search">
+          <div class="section-heading hero-search-head">
+            <div>
+              <p class="eyebrow">检索</p>
+              <!-- <h2>按年号或公元年份反查</h2> -->
+            </div>
+          </div>
+
+          <form id="searchForm" class="search-form">
+            <label class="search-label" for="searchInput">输入年号或公元年份</label>
+            <div class="search-row">
+              <input
+                id="searchInput"
+                name="query"
+                type="text"
+                autocomplete="off"
+                placeholder="例如：康熙、崇德、1875"
+              />
+              <button type="submit">查询</button>
+            </div>
+          </form>
+
+          <div class="hero-search-body">
+            <div id="searchResults" class="search-results" aria-live="polite"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <section class="panel overview-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">总览时间轴</p>
+              <h2>统一比例时间轴</h2>
+            </div>
+          </div>
+          <div id="overviewTimeline" class="timeline-host" aria-live="polite"></div>
+        </section>
+
+        <aside class="panel search-panel">
+          <div class="section-heading">
+            <div>
+              <!-- <p class="eyebrow">详情</p> -->
+              <!-- <h2>当前皇帝</h2> -->
+            </div>
+          </div>
+          <div id="selectedRulerPanel" class="selected-ruler-panel" aria-live="polite"></div>
+        </aside>
+
+        <section class="panel detail-panel" id="detailPanel" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <script src="./src/data/overview.js"></script>
+    <script src="./src/data/shang.js"></script>
+    <script src="./src/data/zhou.js"></script>
+    <script src="./src/data/qin-xin.js"></script>
+    <script src="./src/data/three-kingdoms.js"></script>
+    <script src="./src/data/han.js"></script>
+    <script src="./src/data/jin-dynasties.js"></script>
+    <script src="./src/data/southern-northern-dynasties.js"></script>
+    <script src="./src/data/sui-tang.js"></script>
+    <script src="./src/data/five-dynasties.js"></script>
+    <script src="./src/data/liao.js"></script>
+    <script src="./src/data/song.js"></script>
+    <script src="./src/data/jin.js"></script>
+    <script src="./src/data/qing.js"></script>
+    <script src="./src/data/ming.js"></script>
+    <script src="./src/data/yuan.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
