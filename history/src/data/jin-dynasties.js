@@ -542,7 +542,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
           type: "emperor",
           rulerId: "mudi",
           parentId: "kangdi-main",
-          colStart: 18,
+          colStart: 16,
           colSpan: 5,
         },
         {

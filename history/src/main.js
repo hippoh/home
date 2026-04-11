@@ -32,6 +32,7 @@ const {
   jinDynasty,
   northernSongDynasty,
   southernSongDynasty,
+  joseonDynasty,
   qingDynasty,
   mingDynasty,
   yuanDynasty,
@@ -71,6 +72,7 @@ if (
   !jinDynasty ||
   !northernSongDynasty ||
   !southernSongDynasty ||
+  !joseonDynasty ||
   !qingDynasty ||
   !mingDynasty ||
   !yuanDynasty
@@ -105,6 +107,7 @@ const detailRegistry = {
   jin: jinDynasty,
   "northern-song": northernSongDynasty,
   "southern-song": southernSongDynasty,
+  joseon: joseonDynasty,
   qing: qingDynasty,
   ming: mingDynasty,
   yuan: yuanDynasty,

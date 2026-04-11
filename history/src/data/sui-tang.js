@@ -754,7 +754,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
         { id: "jingzong-main", type: "emperor", rulerId: "jingzong", parentId: "muzong-main", colStart: 16, colSpan: 5 },
         { id: "wenzong-main", type: "emperor", rulerId: "wenzong", parentId: "muzong-main", colStart: 24, colSpan: 5 },
         { id: "wuzong-main", type: "emperor", rulerId: "wuzong", parentId: "muzong-main", colStart: 32, colSpan: 5 },
-        { id: "yizong-main", type: "emperor", rulerId: "yizong", parentId: "xuanzong-late-main", colStart: 34, colSpan: 5 },
+        { id: "yizong-main", type: "emperor", rulerId: "yizong", parentId: "xuanzong-late-main", colStart: 40, colSpan: 5 },
       ],
     },
     {

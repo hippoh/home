@@ -8,6 +8,7 @@ window.HistoryTimelineData.overviewConfig = {
     { id: "core", label: "主线朝代" },
     { id: "southern-northern", label: "南北朝" },
     { id: "between-tang-yuan", label: "唐元之间" },
+    { id: "joseon", label: "朝鲜王国" },
   ],
 };
 
@@ -368,6 +369,18 @@ window.HistoryTimelineData.overviewDynasties = [
     implemented: true,
     tone: "vermilion",
     note: "已接入洪武至崇祯的明帝主线",
+  },
+  {
+    id: "joseon",
+    name: "朝鲜",
+    startYear: 1392,
+    endYear: 1910,
+    lane: "joseon",
+    detailId: "joseon",
+    defaultRulerId: "taejo",
+    implemented: true,
+    tone: "teal",
+    note: "已接入太祖至纯宗，并纳入大韩帝国末段",
   },
   {
     id: "qing",

@@ -322,7 +322,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
             type: "relative",
             label: "曹操",
             subtitle: "文帝之父，追尊魏武帝",
-            colStart: 6,
+            colStart: 14,
             colSpan: 5,
           },
           {
@@ -346,20 +346,20 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
         label: "第二代",
         nodes: [
           {
-            id: "three-kingdoms-wei-caopi-main",
-            type: "emperor",
-            rulerId: "wei-caopi",
-            parentId: "three-kingdoms-caocao",
-            colStart: 2,
-            colSpan: 5,
-          },
-          {
             id: "three-kingdoms-caozhang",
             type: "relative",
             label: "曹彰",
             subtitle: "任城威王，曹芳一支所出多系于此",
             parentId: "three-kingdoms-caocao",
-            colStart: 10,
+            colStart: 4,
+            colSpan: 5,
+          },
+          {
+            id: "three-kingdoms-wei-caopi-main",
+            type: "emperor",
+            rulerId: "wei-caopi",
+            parentId: "three-kingdoms-caocao",
+            colStart: 14,
             colSpan: 5,
           },
           {
@@ -368,7 +368,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
             label: "曹宇",
             subtitle: "燕王，元帝之父",
             parentId: "three-kingdoms-caocao",
-            colStart: 18,
+            colStart: 24,
             colSpan: 5,
           },
           {
@@ -411,19 +411,19 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
         label: "第三代",
         nodes: [
           {
-            id: "three-kingdoms-wei-caorui-main",
-            type: "emperor",
-            rulerId: "wei-caorui",
-            parentId: "three-kingdoms-wei-caopi-main",
-            colStart: 2,
-            colSpan: 5,
-          },
-          {
             id: "three-kingdoms-caokai",
             type: "relative",
             label: "曹楷？",
             subtitle: "《魏氏春秋》作曹芳生父，系曹彰之子",
             parentId: "three-kingdoms-caozhang",
+            colStart: 4,
+            colSpan: 5,
+          },
+          {
+            id: "three-kingdoms-wei-caorui-main",
+            type: "emperor",
+            rulerId: "wei-caorui",
+            parentId: "three-kingdoms-wei-caopi-main",
             colStart: 10,
             colSpan: 5,
           },
@@ -441,7 +441,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
             type: "emperor",
             rulerId: "wei-caohuan",
             parentId: "three-kingdoms-caoyu",
-            colStart: 26,
+            colStart: 24,
             colSpan: 5,
           },
           {
@@ -463,7 +463,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
             type: "emperor",
             rulerId: "wei-caofang",
             parentId: "three-kingdoms-caokai",
-            colStart: 10,
+            colStart: 4,
             colSpan: 5,
           },
           {

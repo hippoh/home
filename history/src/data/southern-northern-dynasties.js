@@ -1133,7 +1133,7 @@ window.HistoryTimelineData = window.HistoryTimelineData || {};
             type: "relative",
             label: "萧懿",
             subtitle: "武帝兄，萧渊明之父",
-            colStart: 52,
+            colStart: 60,
             colSpan: 5,
           },
         ],
