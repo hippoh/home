@@ -1,88 +1,133 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>中国历史年表和帝王世系</title>
-    <link rel="stylesheet" href="./src/styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>网站首页</title>
+    <meta name="description" content="基础导航首页" />
+    <style>
+      :root {
+        --paper: #eef8f7;
+        --ink: #183136;
+        --muted: #5f7a7f;
+        --line: rgba(78, 125, 130, 0.18);
+        --accent: #5f97a2;
+        --accent-strong: #437984;
+        --shadow: 0 24px 60px rgba(40, 84, 90, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        color: var(--ink);
+        font-family: "Iowan Old Style", "Palatino Linotype", "Songti SC", "STSong", serif;
+        background:
+          radial-gradient(circle at top left, rgba(137, 198, 201, 0.22), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(109, 164, 171, 0.16), transparent 24%),
+          linear-gradient(180deg, #f8fcfc 0%, #e7f4f3 100%);
+      }
+
+      .portal {
+        width: min(720px, 100%);
+        padding: 36px 32px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(252, 255, 255, 0.9);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 0.84rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+      }
+
+      .intro {
+        margin: 14px 0 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .links {
+        display: grid;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .link-card {
+        display: block;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(238, 247, 246, 0.94));
+        color: inherit;
+        text-decoration: none;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .link-card:hover {
+        transform: translateY(-1px);
+        border-color: rgba(78, 143, 152, 0.26);
+        box-shadow: 0 14px 24px rgba(40, 84, 90, 0.08);
+      }
+
+      .link-title {
+        display: block;
+        font-size: 1.15rem;
+      }
+
+      .link-meta {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+    </style>
   </head>
   <body>
-    <div class="page-shell">
-      <header class="hero panel">
-        <div class="hero-copy">
-          <p class="eyebrow">中国历史年表</p>
-          <h1>中国历史年表和帝王世系</h1>
-        </div>
-        <div class="hero-search">
-          <div class="section-heading hero-search-head">
-            <div>
-              <p class="eyebrow">检索</p>
-              <!-- <h2>按年号或公元年份反查</h2> -->
-            </div>
-          </div>
+    <main class="portal">
+      <p class="eyebrow">首页</p>
+      <h1>内容导航</h1>
+      <p class="intro">这里有4个入口：</p>
 
-          <form id="searchForm" class="search-form">
-            <label class="search-label" for="searchInput">输入年号或公元年份</label>
-            <div class="search-row">
-              <input
-                id="searchInput"
-                name="query"
-                type="text"
-                autocomplete="off"
-                placeholder="例如：康熙、崇德、1875"
-              />
-              <button type="submit">查询</button>
-            </div>
-          </form>
+      <div class="links">
+        <a class="link-card" href="./Chinese1/classics.html">
+          <span class="link-title">古籍全文阅读站</span>
+          <span class="link-meta">进入《声律启蒙》《幼学琼林》《世说新语》《唐诗三百首》《古文观止》的阅读与打印页面。</span>
+        </a>
 
-          <div class="hero-search-body">
-            <div id="searchResults" class="search-results" aria-live="polite"></div>
-          </div>
-        </div>
-      </header>
+        <a class="link-card" href="./dark/hdm.html">
+          <span class="link-title">黑暗物质人物关系网页</span>
+          <span class="link-meta">进入《His Dark Materials》人物与关系网络页面。</span>
+        </a>
 
-      <main class="app-grid">
-        <section class="panel overview-panel">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">总览时间轴</p>
-              <h2>统一比例时间轴</h2>
-            </div>
-          </div>
-          <div id="overviewTimeline" class="timeline-host" aria-live="polite"></div>
-        </section>
+        <a class="link-card" href="./ph/index.html">
+          <span class="link-title">西方哲学人物关系网页</span>
+          <span class="link-meta">进入西方哲学家时间卷轴页面。</span>
+        </a>
 
-        <aside class="panel search-panel">
-          <div class="section-heading">
-            <div>
-              <!-- <p class="eyebrow">详情</p> -->
-              <!-- <h2>当前皇帝</h2> -->
-            </div>
-          </div>
-          <div id="selectedRulerPanel" class="selected-ruler-panel" aria-live="polite"></div>
-        </aside>
-
-        <section class="panel detail-panel" id="detailPanel" aria-live="polite"></section>
-      </main>
-    </div>
-
-    <script src="./src/data/overview.js"></script>
-    <script src="./src/data/shang.js"></script>
-    <script src="./src/data/zhou.js"></script>
-    <script src="./src/data/qin-xin.js"></script>
-    <script src="./src/data/three-kingdoms.js"></script>
-    <script src="./src/data/han.js"></script>
-    <script src="./src/data/jin-dynasties.js"></script>
-    <script src="./src/data/southern-northern-dynasties.js"></script>
-    <script src="./src/data/sui-tang.js"></script>
-    <script src="./src/data/five-dynasties.js"></script>
-    <script src="./src/data/liao.js"></script>
-    <script src="./src/data/song.js"></script>
-    <script src="./src/data/jin.js"></script>
-    <script src="./src/data/joseon.js"></script>
-    <script src="./src/data/qing.js"></script>
-    <script src="./src/data/ming.js"></script>
-    <script src="./src/data/yuan.js"></script>
-    <script src="./src/main.js"></script>
+      <a class="link-card" href="./history/index.html">
+          <span class="link-title">中国历史朝代皇帝世系</span>
+          <span class="link-meta">进入中国历朝历代皇帝世系页面。</span>
+        </a>
+      </div>
+    </main>
   </body>
 </html>
